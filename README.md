@@ -4,6 +4,8 @@ Option C, Employee Quiz Builder. This assessment prototype turns property-indust
 
 ## Try it
 
+[Open the public demo](https://property-quiz-studio.ovalcypress2.chatgpt.site/).
+
 - **Sample:** Open either five-question quiz, answer each question, and select **Check my score**. Review the explanations, retake the quiz, or download JSON with the answer key.
 - **Automatic generation:** Enter a topic, optional public source notes, and your own Vercel AI Gateway key under **AI connection**. Select **Generate quiz**. The browser sends the key directly to the Gateway and clears the input when the request starts.
 - **Copy and import:** Expand **Use your own AI chat**, copy the generated prompt into an AI chat, then paste the returned JSON into the app. For a reproducible example, choose 5 questions and paste the contents of [Jakarta market literacy](examples/jakarta-market-literacy.json).
@@ -28,6 +30,6 @@ For dated topics, paste a dated public source brief. Without figures in the note
 
 ## Verification and follow-up
 
-The Node tests cover malformed responses, duplicate choices and questions, wrong counts, out-of-range indexes, answer shuffling, scoring, one repair attempt, and provider auth errors. The direct model path uses a visitor-supplied key and its success case is tested with a simulated provider response. The sample and copy/import paths are available without a Gateway account.
+The Node tests cover malformed responses, duplicate choices and questions, wrong counts, out-of-range indexes, answer shuffling, scoring, one repair attempt, and provider auth errors. The direct model path uses a visitor-supplied key and its success case is tested with a simulated provider response. The sample and copy/import paths are available without a Gateway account. Browser checks covered a 4/5 attempt with one deliberate error, explanations, retake reset, invalid and valid imports, and the downloaded answer key.
 
 A next version for internal use could add approved source ingestion and a trainer review step before publishing quizzes to employees.
