@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Create scenario-based property training quizzes for 99 Group employees.">
+  <meta name="color-scheme" content="light">
+  <title>Property Quiz Studio</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+<header class="top"><div class="frame"><span class="brand"><span class="logo" aria-hidden="true">▥</span> Property Quiz Studio</span><span class="tag">99 GROUP TRAINING · DEMO</span></div></header>
+<main class="frame">
+  <div class="hero">
+    <div class="eyebrow"><span></span> LEARNING & DEVELOPMENT</div>
+    <h1>Build a property quiz.</h1>
+    <p>Turn an industry topic or market brief into a practical knowledge check for your team.</p>
+  </div>
+  <div class="layout">
+    <section class="card" aria-labelledby="setup-title">
+      <h2 id="setup-title">Quiz setup</h2>
+      <p class="muted">Choose what your team should practise.</p>
+      <form id="setup">
+        <fieldset id="settings">
+          <label for="topic">Property topic</label>
+          <input id="topic" name="topic" required maxlength="160" placeholder="e.g. Property market updates in Jakarta">
+          <div class="fields">
+            <div><label for="count">Questions</label><select id="count" name="count"><option>5</option><option>8</option><option>10</option></select></div>
+            <div><label for="difficulty">Difficulty</label><select id="difficulty" name="difficulty"><option>Foundational</option><option selected>Intermediate</option><option>Advanced</option></select></div>
+            <div><label for="language">Language</label><select id="language" name="language"><option>English</option><option>Bahasa Indonesia</option></select></div>
+          </div>
+          <details class="disclosure">
+            <summary>Source notes <small>OPTIONAL</small></summary>
+            <label for="notes">Paste a dated market brief or training notes</label>
+            <textarea id="notes" name="notes" maxlength="6000" rows="4" placeholder="Include the source, date, and key facts. Use public material only."></textarea>
+          </details>
+          <details class="disclosure" id="connection">
+            <summary>AI connection <small>YOUR KEY</small></summary>
+            <label for="key">Vercel AI Gateway key</label>
+            <input id="key" type="password" autocomplete="off" spellcheck="false">
+            <p class="muted small">The key is sent directly to AI Gateway for this request. The app clears it on use and does not save it.</p>
+          </details>
+          <button class="primary" type="submit" id="generate">Generate quiz <span aria-hidden="true">↗</span></button>
+          <details class="disclosure import">
+            <summary>Use your own AI chat</summary>
+            <p class="muted small">Copy the prompt into your AI chat, then paste its JSON response below. Keep the question count the same.</p>
+            <button type="button" class="secondary" id="copy">Copy quiz prompt</button>
+            <textarea id="prompt-text" aria-label="Quiz prompt to copy" rows="5" readonly hidden></textarea>
+            <label for="json">AI response JSON</label>
+            <textarea id="json" rows="4" maxlength="40000" spellcheck="false" placeholder='{"title":"…","questions":[…]}'></textarea>
+            <button type="button" class="secondary" id="import">Load quiz JSON</button>
+          </details>
+        </fieldset>
+        <p id="status" role="status" aria-live="polite" class="status"></p>
+      </form>
+    </section>
+    <section class="card stage" aria-labelledby="stage-title">
+      <div class="stage-head"><span>QUIZ WORKSPACE</span><span id="badge">READY</span></div>
+      <div id="workspace">
+        <div class="intro">
+          <div class="glyph" aria-hidden="true">▤</div>
+          <h2 id="stage-title">Try a sample quiz</h2>
+          <p class="muted">Explore the learner experience with a five-question demo. No setup needed.</p>
+          <button type="button" class="sample" data-sample="0"><span><b>Property agent skills</b><small>Client discovery, listings and follow-up</small></span><span aria-hidden="true">→</span></button>
+          <button type="button" class="sample" data-sample="1"><span><b>Jakarta market literacy</b><small>Read and interpret market indicators</small></span><span aria-hidden="true">→</span></button>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer><span>Property Quiz Studio</span><span>Assessment prototype · Review generated answers before training.</span></footer>
+</main>
+</body>
+</html>

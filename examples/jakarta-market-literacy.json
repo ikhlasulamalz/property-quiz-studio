@@ -1,0 +1,35 @@
+{
+  "title": "Jakarta Property Market Literacy",
+  "questions": [
+    {
+      "prompt": "A hypothetical Jakarta report shows a median asking price increase of 6% but no data on closed sales. What can an agent tell a client?",
+      "choices": ["Sale prices rose by 6%", "The median asking price rose in the observed listings", "Every district became 6% more expensive", "Homebuyer purchasing power rose by 6%"],
+      "answerIndex": 1,
+      "explanation": "Asking prices describe advertised listings. Closed-sale data is needed to describe transaction prices."
+    },
+    {
+      "prompt": "In a hypothetical quarter, the citywide median asking price rises while the median in each district stays flat. Which explanation should the analyst check first?",
+      "choices": ["The citywide calculation must be wrong", "Every district used a different currency", "Transaction prices rose in every district", "The listing mix shifted toward higher-priced districts"],
+      "answerIndex": 3,
+      "explanation": "A change in the relative number of listings from high-priced districts can shift the overall median."
+    },
+    {
+      "prompt": "Two reports give different figures for apartment vacancy in Jakarta. What is the best first step before deciding which figure to use?",
+      "choices": ["Compare the periods, coverage, and definitions of vacancy", "Average the two figures", "Choose the report with the lower vacancy figure", "Use the figure from the report with the larger chart"],
+      "answerIndex": 0,
+      "explanation": "Different periods, boundaries, or definitions can produce different results even when both reports are accurate."
+    },
+    {
+      "prompt": "A hypothetical listing portal reports more active apartment listings and longer time on market. What extra evidence would best help assess whether demand weakened?",
+      "choices": ["The most viewed listing photo", "A map of the most expensive districts", "Comparable periods of closed-sales volume and inventory by segment", "The highest asking price on the portal"],
+      "answerIndex": 2,
+      "explanation": "Closed-sales volume, inventory and segment comparisons help distinguish a demand change from seasonality or a shift in listing mix."
+    },
+    {
+      "prompt": "An agent has no verified figures for the latest Jakarta apartment market. What should go into a client update?",
+      "choices": ["A prediction presented as the current median", "A clear statement of what is known and which dated data would verify the current trend", "A figure for another city relabelled as Jakarta", "An old figure with the date removed"],
+      "answerIndex": 1,
+      "explanation": "State the evidence gap and identify the relevant dated source before making a current market claim."
+    }
+  ]
+}
