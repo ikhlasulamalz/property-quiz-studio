@@ -12,7 +12,7 @@ Option C, Employee Quiz Builder. This assessment prototype turns property-indust
 
 ## Run locally
 
-Requires Python 3 for serving and Node.js 22+ for tests. No package installation is needed.
+Requires Python 3 for serving and Node.js 22+ for tests. The committed CSS lets you run the demo without installing packages. To rebuild the stylesheet after changing Tailwind classes or editing `src/tailwind.css`, run `npm ci` and `npm run build`.
 
 ```sh
 python3 -m http.server 8073 --bind 127.0.0.1 --directory dist

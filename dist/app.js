@@ -53,19 +53,20 @@ function renderQuiz(quiz, origin, answers = null) {
   const graded = answers !== null;
   $('badge').textContent = origin;
   const form = document.createElement('form');
-  const sub = element('p', graded ? 'Review your answers below.' : 'Choose one answer per question, then check your score.', 'muted');
+  const sub = element('p', graded ? 'Review your answers below.' : 'Choose one answer per question, then check your score.', 'mt-[7px] text-muted');
   workspace.replaceChildren(title, sub, form);
   if (graded) {
     const correct = score(quiz, answers);
-    sub.after(element('p', `Score: ${correct} / ${quiz.questions.length} · ${Math.round(correct / quiz.questions.length * 100)}%`, 'result'));
+    sub.after(element('p', `Score: ${correct} / ${quiz.questions.length} · ${Math.round(correct / quiz.questions.length * 100)}%`, 'my-[13px] rounded-[10px] bg-correct p-3 font-semibold'));
   }
   quiz.questions.forEach((question, index) => {
-    const field = element('fieldset', '', 'quiz-question');
-    field.append(element('legend', `${index + 1}. ${question.prompt}`));
+    const field = element('fieldset', '', 'border-t border-line py-3.5 first:mt-[18px]');
+    field.append(element('legend', `${index + 1}. ${question.prompt}`, 'pr-[5px] font-semibold'));
     question.choices.forEach((choice, choiceIndex) => {
-      const label = element('label', '', 'choice');
+      const label = element('label', '', 'my-1.5 flex items-baseline gap-[9px] rounded-lg bg-panel p-[9px] font-medium');
       const input = document.createElement('input');
       input.type = 'radio';
+      input.className = 'accent-brand';
       input.name = `question-${index}`;
       input.value = choiceIndex;
       input.required = !graded;
@@ -76,11 +77,11 @@ function renderQuiz(quiz, origin, answers = null) {
     });
     if (graded) {
       const correct = answers[index] === question.answerIndex;
-      field.append(element('p', `${correct ? 'Correct' : 'Best answer'} · ${question.choices[question.answerIndex]}. ${question.explanation}`, `feedback${correct ? '' : ' missed'}`));
+      field.append(element('p', `${correct ? 'Correct' : 'Best answer'} · ${question.choices[question.answerIndex]}. ${question.explanation}`, `mt-2 rounded-lg px-[11px] py-[9px] text-sm ${correct ? 'bg-correct' : 'bg-missed'}`));
     }
     form.append(field);
   });
-  const actions = element('div', '', 'actions');
+  const actions = element('div', '', 'mt-[13px] flex flex-wrap gap-2');
   if (graded) {
     actions.append(button('Retake quiz', () => renderQuiz(shuffle(quiz), origin), 'primary'));
   } else {

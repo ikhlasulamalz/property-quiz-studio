@@ -1,1 +1,1 @@
-{"name":"property-quiz-studio","private":true,"type":"module","scripts":{"test":"node --test"}}
+{"name":"property-quiz-studio","private":true,"type":"module","scripts":{"test":"node --test","build":"tailwindcss -i ./src/tailwind.css -o ./dist/style.css --minify"},"devDependencies":{"@tailwindcss/cli":"4.3.5","tailwindcss":"4.3.5"}}

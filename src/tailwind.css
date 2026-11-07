@@ -1,0 +1,88 @@
+@import "tailwindcss" source(none);
+@source "../dist/index.html";
+@source "../dist/app.js";
+
+@theme {
+  --color-ink: #152e29;
+  --color-paper: #f3f4ed;
+  --color-brand: #134539;
+  --color-muted: #4b6259;
+  --color-line: #dce3d9;
+  --color-lime: #ddf48b;
+  --color-panel: #f6f8f2;
+  --color-correct: #eaf4d6;
+  --color-missed: #fff0df;
+  --color-error: #982c24;
+}
+
+@layer base {
+  h2 {
+    @apply text-[1.42rem] leading-tight font-bold tracking-[-.03em];
+  }
+
+  fieldset {
+    @apply min-w-0;
+  }
+
+  label {
+    @apply mb-[5px] block text-[.83rem] font-semibold;
+  }
+
+  input:not([type="radio"]), select, textarea {
+    @apply w-full min-w-0 rounded-[9px] border border-[#c9d6cb] bg-[#f9faf6] px-[11px] py-2.5;
+  }
+
+  textarea {
+    @apply resize-y;
+  }
+
+  summary {
+    @apply cursor-pointer text-sm font-bold;
+  }
+
+  button {
+    @apply cursor-pointer disabled:cursor-default disabled:opacity-65;
+  }
+
+  :focus-visible {
+    @apply outline-3 outline-offset-3 outline-[#6a9832];
+  }
+}
+
+@layer components {
+  .frame {
+    @apply mx-auto w-[calc(100%-28px)] max-w-[1120px] min-[761px]:w-[calc(100%-48px)];
+  }
+
+  .card {
+    @apply min-w-0 rounded-[20px] border border-line bg-white shadow-[0_2px_4px_#2146310a];
+  }
+
+  .disclosure {
+    @apply border-t border-line py-2.5 [&[open]>:is(label,button,textarea)]:mt-2.5;
+  }
+
+  .primary, .secondary {
+    @apply rounded-[9px] border px-3.5 py-2.5 text-sm font-semibold;
+  }
+
+  .primary {
+    @apply border-brand bg-brand text-white;
+  }
+
+  .secondary {
+    @apply border-line bg-[#f4f7ee] text-brand hover:bg-[#eaf2db];
+  }
+
+  .sample {
+    @apply mt-[11px] flex w-full items-center justify-between gap-2.5 rounded-xl border border-line bg-panel px-[13px] py-[11px] text-left text-brand hover:bg-[#eaf2db];
+  }
+
+  .status {
+    @apply mt-1.5 text-[.83rem] text-[#395b23] empty:hidden;
+  }
+
+  .status.error {
+    @apply text-error;
+  }
+}
