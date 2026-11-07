@@ -3,16 +3,17 @@
 @source "../dist/app.js";
 
 @theme {
-  --color-ink: #152e29;
-  --color-paper: #f3f4ed;
-  --color-brand: #134539;
-  --color-muted: #4b6259;
-  --color-line: #dce3d9;
-  --color-lime: #ddf48b;
-  --color-panel: #f6f8f2;
-  --color-correct: #eaf4d6;
-  --color-missed: #fff0df;
-  --color-error: #982c24;
+  --color-ink: #0f172a;
+  --color-brand: #1e3a5f;
+  --color-muted: #475569;
+  --color-line: #e2e8f0;
+  --color-control: #94a3b8;
+  --color-accent: #2563eb;
+  --color-accent-soft: #eff6ff;
+  --color-panel: #f8fafc;
+  --color-correct: #ecfdf5;
+  --color-missed: #fff7ed;
+  --color-error: #991b1b;
 }
 
 @layer base {
@@ -29,7 +30,7 @@
   }
 
   input:not([type="radio"]), select, textarea {
-    @apply w-full min-w-0 rounded-[9px] border border-[#c9d6cb] bg-[#f9faf6] px-[11px] py-2.5;
+    @apply w-full min-w-0 rounded-[9px] border border-control bg-white px-[11px] py-2.5;
   }
 
   textarea {
@@ -45,7 +46,7 @@
   }
 
   :focus-visible {
-    @apply outline-3 outline-offset-3 outline-[#6a9832];
+    @apply outline-3 outline-offset-3 outline-accent;
   }
 }
 
@@ -55,7 +56,7 @@
   }
 
   .card {
-    @apply min-w-0 rounded-[20px] border border-line bg-white shadow-[0_2px_4px_#2146310a];
+    @apply min-w-0 rounded-2xl border border-line bg-white shadow-sm;
   }
 
   .disclosure {
@@ -67,19 +68,19 @@
   }
 
   .primary {
-    @apply border-brand bg-brand text-white;
+    @apply border-brand bg-brand text-white hover:bg-ink;
   }
 
   .secondary {
-    @apply border-line bg-[#f4f7ee] text-brand hover:bg-[#eaf2db];
+    @apply border-control bg-white text-brand hover:bg-panel;
   }
 
   .sample {
-    @apply mt-[11px] flex w-full items-center justify-between gap-2.5 rounded-xl border border-line bg-panel px-[13px] py-[11px] text-left text-brand hover:bg-[#eaf2db];
+    @apply mt-[11px] flex w-full items-center justify-between gap-2.5 rounded-xl border border-line bg-white px-[13px] py-[11px] text-left text-brand hover:bg-accent-soft;
   }
 
   .status {
-    @apply mt-1.5 text-[.83rem] text-[#395b23] empty:hidden;
+    @apply mt-1.5 text-[.83rem] text-brand empty:hidden;
   }
 
   .status.error {
